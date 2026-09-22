@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Local databases / data
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# Generated files
+dist/
+build/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/

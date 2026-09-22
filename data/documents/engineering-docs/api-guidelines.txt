@@ -1,0 +1,29 @@
+API Guidelines
+
+These are the conventions engineers should follow when adding new endpoints
+to Aegis services.
+
+Naming
+
+Endpoints should be named after resources, not actions. Prefer
+"/documents/{id}/chunks" over "/getChunksForDocument". Use plural nouns for
+collections and singular identifiers for individual resources.
+
+Versioning
+
+All public endpoints are versioned with a leading path segment, such as
+"/v1/documents". Breaking changes require a new version segment; additive
+changes do not.
+
+Error Responses
+
+Errors return a JSON body with a "code" field and a human-readable
+"message" field. The HTTP status code should match the error category:
+400 for client errors, 404 for missing resources, and 500 for unexpected
+server errors.
+
+Pagination
+
+List endpoints accept "limit" and "cursor" query parameters and return a
+"next_cursor" field when more results are available. Do not use page
+numbers, since the underlying data can change between requests.
